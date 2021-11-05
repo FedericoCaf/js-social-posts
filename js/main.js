@@ -65,19 +65,31 @@ function convertDate(string){
 
 generatePost();
 
+const buttonContainer = document.querySelector('.likes__cta');
+const buttonLike = document.querySelector('.like-button');
+
+console.log(buttonLike);
+
+buttonContainer.addEventListener('click', function(){
+
+    buttonLike.classList.add('like-button--liked');
+
+})
 
 function generatePost(){
     
     for(let post of posts){
-    
+
       const id = post.id;
       const content = post.content;
       const media = post.media;
       const authorName = post.author.name;
-      const authorImg = post.author.image;
+      let authorImg = post.author.image;
       const likes = post.likes;
       const created = post.created;
-    
+
+      if(authorImg == null) authorImg = 'https://unsplash.it/300/300?image=171';
+     
       document.getElementById('container').innerHTML +=
     
       `
