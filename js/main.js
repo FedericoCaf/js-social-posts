@@ -56,6 +56,9 @@ const posts = [
     }
 ];
 
+let likeCounter = posts[0].likes;
+console.log(likeCounter);
+
 function convertDate(string){
   let us_date = string;
   let parts = us_date.split('-');
@@ -65,6 +68,8 @@ function convertDate(string){
 
 generatePost();
 
+
+
 const buttonContainer = document.querySelector('.likes__cta');
 const buttonLike = document.querySelector('.like-button');
 
@@ -72,7 +77,10 @@ console.log(buttonLike);
 
 buttonContainer.addEventListener('click', function(){
 
-    buttonLike.classList.add('like-button--liked');
+ buttonLike.classList.add('like-button--liked');
+ likeCounter = likeCounter + 1;
+ console.log('likeCounter', likeCounter);
+ document.getElementById('like-counter-1').innerHTML = likeCounter;
 
 })
 
@@ -85,7 +93,7 @@ function generatePost(){
       const media = post.media;
       const authorName = post.author.name;
       let authorImg = post.author.image;
-      const likes = post.likes;
+      let likes = post.likes;
       const created = post.created;
 
       if(authorImg == null) authorImg = 'https://unsplash.it/300/300?image=171';
