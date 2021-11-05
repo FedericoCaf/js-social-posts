@@ -56,8 +56,6 @@ const posts = [
     }
 ];
 
-let likeCounter = posts[0].likes;
-console.log(likeCounter);
 
 function convertDate(string){
   let us_date = string;
@@ -68,19 +66,53 @@ function convertDate(string){
 
 generatePost();
 
+const buttonContainer = document.getElementsByClassName('likes__cta');
+const buttonLike = document.getElementsByClassName('like-button');
 
-
-const buttonContainer = document.querySelector('.likes__cta');
-const buttonLike = document.querySelector('.like-button');
-
+console.log(buttonContainer);
 console.log(buttonLike);
 
-buttonContainer.addEventListener('click', function(){
-
- buttonLike.classList.add('like-button--liked');
+buttonContainer[0].addEventListener('click', function(){
+ let likeCounter = posts[0].likes;
+ buttonLike[0].classList.add('like-button--liked');
  likeCounter = likeCounter + 1;
  console.log('likeCounter', likeCounter);
- document.getElementById('like-counter-1').innerHTML = likeCounter;
+ document.getElementsByClassName('js-likes-counter')[0].innerHTML = likeCounter;
+})
+
+buttonContainer[1].addEventListener('click', function(){
+    let likeCounter1 = posts[1].likes;
+    buttonLike[1].classList.add('like-button--liked');
+    likeCounter1 = likeCounter1 + 1;
+    console.log('likeCounter', likeCounter1);
+    document.getElementsByClassName('js-likes-counter')[1].innerHTML = likeCounter1;
+
+})
+
+buttonContainer[2].addEventListener('click', function(){
+    let likeCounter2 = posts[2].likes;
+    buttonLike[2].classList.add('like-button--liked');
+    likeCounter2 = likeCounter2 + 1;
+    console.log('likeCounter', likeCounter2);
+    document.getElementsByClassName('js-likes-counter')[2].innerHTML = likeCounter2;
+
+})
+
+buttonContainer[3].addEventListener('click', function(){
+    let likeCounter3 = posts[3].likes;
+    buttonLike[3].classList.add('like-button--liked');
+    likeCounter3 = likeCounter3 + 1;
+    console.log('likeCounter', likeCounter3);
+    document.getElementsByClassName('js-likes-counter')[3].innerHTML = likeCounter3;
+
+})
+
+buttonContainer[4].addEventListener('click', function(){
+    let likeCounter4 = posts[4].likes;
+    buttonLike[4].classList.add('like-button--liked');
+    likeCounter4 = likeCounter4 + 1;
+    console.log('likeCounter', likeCounter4);
+    document.getElementsByClassName('js-likes-counter')[4].innerHTML = likeCounter4;
 
 })
 
